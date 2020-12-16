@@ -1,2 +1,6 @@
 .idea
 venv
+datasets/cifar-10/test
+datasets/cifar-10/train
+demos/demo1/logs
+demos/demo1/models
