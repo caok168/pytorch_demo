@@ -5,12 +5,15 @@ from PIL import Image
 from torchvision import transforms
 import numpy as np
 from demos.demo1.base_resnet import resnet
+import os
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 net = resnet()
 
-net.load_state_dict(torch.load("models/resnet/200.pth"))
+model_path = os.path.abspath(os.path.join(os.getcwd(), "models/resnet/159.pth"))
+
+net.load_state_dict(torch.load(model_path))
 
 im_list = glob.glob("../../datasets/cifar-10/test/*/*")
 
